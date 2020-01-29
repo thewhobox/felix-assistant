@@ -1,0 +1,12 @@
+.form-group[data-csstype=select] .d-menu span {
+    font-size: 11px;
+    color: grey
+}
+
+#formadd .select-input span {
+    display: none !important;
+}
+
+div[data-showonexpert=true] {
+    display: none;
+}

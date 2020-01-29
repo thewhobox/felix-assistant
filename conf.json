@@ -1,0 +1,23 @@
+{
+    "functions": {
+        "speech": true,
+        "web": true,
+        "hwleds": false
+    },
+    "speech": {
+        "nlu": {
+            "default": "offline",
+            "offlineFallback": true
+        },
+        "siteId": "default",
+        "stt": "snips"
+    },
+    "update": {
+        "beta": true,
+        "autoupdate": false
+    },
+    "system": {
+        "mode": "compact",
+        "debugAsSecure": true
+    }
+}

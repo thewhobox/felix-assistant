@@ -1,0 +1,23 @@
+tbody tr td:last-child div:first-child {
+    height: 23px;
+    overflow: hidden;
+    display: block;
+    width: 100% !important;
+}
+
+tr[data-canexpand=true] td:nth-child(4):hover {
+    background-color: rgb(255, 155, 155)
+}
+
+.error {
+    background-color: #F44336;
+    color: #fff;
+}
+
+.warn {
+    color: #ff9800;
+}
+
+.debug {
+    background-color: #d7ccc8;
+}

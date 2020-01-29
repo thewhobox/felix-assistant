@@ -1,0 +1,63 @@
+{
+  "name": "felix-assistant",
+  "version": "0.0.1",
+  "description": "A personal assistant for your smarthome devices.",
+  "author": {
+    "name": "Mike",
+    "email": "admin@mikegerst.de"
+  },
+  "contributors": [
+    {
+      "name": "Mike",
+      "email": "admin@mikegerst.de"
+    }
+  ],
+  "homepage": "https://github.com/thewhobox/felix-assistant",
+  "license": "MIT",
+  "keywords": [
+    "felix",
+    "assistant",
+    "smarthome",
+    "speech"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thewhobox/felix-assistant"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "child_process": "^1.0.2",
+    "cookie-parser": "^1.4.4",
+    "lowdb": "^1.0.0",
+    "express": "^4.16.4",
+    "express-react-views": "^0.11.0",
+    "fs": "0.0.2",
+    "socket.io": "^2.2.0",
+    "mqtt": "^3.0.0",
+    "os": "^0.1.1",
+    "pidusage": "^2.0.17",
+    "react": "^16.8.6",
+    "update-notifier": "*",
+    "react-dom": "^16.8.6",
+    "winston": "^3.2.1",
+    "winston-daily-rotate-file": "^3.9.0"
+  },
+  "optionalDependencies": {
+    "rpio": "*"
+  },
+  "devDependencies": {
+    "a.felix.broadlink": "*",
+    "a.felix.deconz": "*",
+    "a.felix.denon": "*",
+    "a.felix.emby": "*",
+    "a.felix.javascript": "*",
+    "a.felix.knx": "0.0.1-e",
+    "a.felix.lgtv": "*",
+    "a.felix.telegram": "*"
+  },
+  "main": "main.js",
+  "bugs": {
+    "url": "https://github.com/thewhobox/felix-assistant/issues"
+  },
+  "readmeFilename": "README.md"
+}

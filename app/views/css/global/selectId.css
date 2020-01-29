@@ -1,0 +1,45 @@
+#selectId .table .selected {
+    background-color: #b4d6ff;
+}
+
+#selectId .table tr.fail {
+    background-color: #ff9b9b;
+}
+
+
+#selectId {
+    width: 80%;
+}
+
+
+#selectId .table .dropper {
+    cursor: pointer;
+}
+
+#selectId .table tr.depth0 td:first-child {
+    padding-right: 60px;
+}
+#selectId .table tr.depth1 td:first-child {
+    padding-left: 20px;
+}
+#selectId .table tr.depth2 td:first-child {
+    padding-left: 40px;
+}
+#selectId .table tr.depth3 td:first-child {
+    padding-left: 60px;
+}
+#selectId .table tr.depth4 td:first-child {
+    padding-left: 80px;
+}
+#selectId .table tr.depth5 td:first-child {
+    padding-left: 100px;
+}
+#selectId .table tr.depth6 td:first-child {
+    padding-left: 120px;
+}
+#selectId .table tr.depth7 td:first-child {
+    padding-left: 140px;
+}
+#selectId .table tr.depth8 td:first-child {
+    padding-left: 160px;
+}

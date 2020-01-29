@@ -1,0 +1,9 @@
+#adapterList .card {
+    width: 220px;
+    float: left;
+    margin: 8px;
+}
+
+#adapterList .card-header {
+    height: 220px;
+}

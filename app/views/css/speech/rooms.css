@@ -1,0 +1,7 @@
+tr td:nth-child(1) a {
+    padding: 0 2px;
+}
+
+main > div.normal {
+    padding-top: 12px;
+}

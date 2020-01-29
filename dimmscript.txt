@@ -1,0 +1,79 @@
+let lightids = ["deconz.0.Light.05", "deconz.0.Light.08", "deconz.0.Light.14"];
+let buttontolight = { 3002: "deconz.0.Light.08", 4002: "deconz.0.Light.14", 8002: "deconz.0.Light.05" };
+
+on(["deconz.0.Sensor.02.buttonevent", "deconz.0.Sensor.33.buttonevent"], "ack", async(state) => {
+    switch(state.value) {
+        case 1001:
+            dimdown();
+            break;
+
+        case 2001:
+            dimup()
+            break;
+
+        case 1002:
+            setoff();
+            break;
+
+        case 2002:
+            seton();
+            break;
+
+        case 3002:
+        case 4002:
+        case 5002:
+        case 6002:
+        case 7002:
+        case 8002:
+            toggleLight(buttontolight[state.value]);
+            break;
+
+        default:
+            console.log("None of the above");
+    }
+});
+
+function toggleLight(id) {
+    setState(id + ".on", -1);
+}
+
+async function setoff() {
+    lightids.forEach(async (light) => {
+        setState(light + ".on", false);
+    });
+}
+
+async function seton() {
+    lightids.forEach(async (light) => {
+        let ison = await checkon(light);
+        if(!ison) return;
+        setState(light + ".bri", 100);
+    });
+}
+
+async function dimup() {
+    lightids.forEach(async (light) => {
+        let ison = await checkon(light);
+        if(!ison) return;
+        let tempstate = await getState(light + ".bri");
+        let toset = tempstate.value + 10;
+        if(toset > 100) toset = 100;
+        setState(light + ".command", { bri: toset * 2.55, transitiontime: 5 });
+    });
+}
+
+async function dimdown() {
+    lightids.forEach(async (light) => {
+        let ison = await checkon(light);
+        if(!ison) return;
+        let tempstate = await getState(light + ".bri");
+        let toset = tempstate.value - 10;
+        if(toset < 0) toset = 0;
+        setState(light + ".command", { bri: toset * 2.55, transitiontime: 5 });
+    });
+}
+
+async function checkon(id) {
+    let temp = await getState(id + ".on");
+    return temp.value;
+}

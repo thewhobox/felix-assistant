@@ -1,0 +1,23 @@
+sudo systemctl stop snips-*
+
+
+Snips services:
+
+sudo systemctl start snips-asr
+sudo systemctl start snips-tts
+sudo systemctl start snips-audio-server
+sudo systemctl start snips-dialogue
+sudo systemctl start snips-hotword
+sudo systemctl start snips-injection
+sudo systemctl start snips-nlu
+sudo systemctl start snips-skill-server
+
+Für Skills:
+sudp apt-get install python3-venv
+
+Jeder SKill:
+sudo /usr/bin/python3 -m venv venv
+sudo sh setup.sh
+
+OR!!!!
+login as root

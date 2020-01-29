@@ -1,0 +1,105 @@
+td.active div[data-type=state-viewer] {
+    display: none;
+}
+
+td div[data-type=state-viewer] {
+    height:24px;
+}
+
+td.active {
+    padding: 0 5px !important;
+}
+
+td div[data-type=state-editor] {
+    display: none;
+}
+
+td.active div[data-type=state-editor] {
+    display: block;
+}
+
+td {
+    border-radius: 0;
+    padding: 10px 5px;
+}
+
+
+.table tr.depth0 td:first-child {
+    padding-right: 60px;
+}
+.table tr.depth1 td:first-child {
+    padding-left: 20px;
+}
+.table tr.depth2 td:first-child {
+    padding-left: 40px;
+}
+.table tr.depth3 td:first-child {
+    padding-left: 60px;
+}
+.table tr.depth4 td:first-child {
+    padding-left: 80px;
+}
+.table tr.depth5 td:first-child {
+    padding-left: 100px;
+}
+.table tr.depth6 td:first-child {
+    padding-left: 120px;
+}
+.table tr.depth7 td:first-child {
+    padding-left: 140px;
+}
+.table tr.depth8 td:first-child {
+    padding-left: 160px;
+}
+
+
+.table tbody tr {
+    height: 47.5px
+}
+
+.table tbody tr td:nth-child(3) {
+    padding: 0 5px;
+}
+
+.table tbody tr:hover td[data-type=actions] div {
+    display: block !important;
+}
+
+.table tbody tr td[data-type=actions] div {
+    display: none;
+}
+
+.table tbody tr td[data-type=actions] {
+    padding: 0 5px;
+}
+
+.table tbody tr:hover {
+    background: #b7b7b7;
+}
+
+.table tr.notsupported {
+    background: #ff8383 !important;
+}
+
+.table .dropper {
+    cursor: pointer;
+}
+
+.table .empty-dropper {
+    padding-left: 15px;
+}
+
+span[data-type=unit] {
+    padding-left: 5px;
+    color: gray;
+}
+
+span[data-type=value].noack {
+    color: #c31a1a;
+}
+
+span.nounit[data-type=value] {
+    display: block;
+    overflow: hidden;
+    height: 25px;
+}

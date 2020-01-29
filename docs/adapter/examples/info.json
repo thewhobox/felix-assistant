@@ -1,0 +1,62 @@
+{
+    "key": "example",
+    "name": "Example",
+    "keywords": [ "example", "test" ],
+    "description": "Nur ein Beispiel",
+    "useSpeechLight": true,
+    "settings": {
+        "pageobjects": {
+            "ip": {
+                "title": "IP Adresse",
+                "placeholder": "192.168.0.xx",
+                "type": "text",
+                "hint": "Gib hier die IP ein.",
+                "value": ""
+            },
+            "checkgroup": {
+                "title": "Suche Gruppen",
+                "type": "checkbox",
+                "hint": "Gibt an ob nach Gruppen gesucht werden soll.",
+                "value": false
+            },
+            "pullInterval": {
+                "title": "Pull Intervall",
+                "type": "number",
+                "hint": "Intervall in dem die States geholte werden sollen. (Nur wenn kein Websocket verfügbar - z.B. HUE)",
+                "unit": "ms",
+                "value": 1000
+            }
+        },
+        "pagebuttons": [
+            {
+                "id": "exampleButton",
+                "title": "Beispiel Button"
+            }
+        ]
+    },
+    "tabs": [{ 
+        "key": "search", 
+        "icon": "search", 
+        "title": "Suchen" 
+    }],
+    "channels": [{
+        "id": "sub",
+        "name": "unterordner",
+        "parent": ""
+    },{
+        "id": "sub2",
+        "name": "Unterordner im Unterordner",
+        "parent": "sub"
+    }],
+    "maintabs": [{
+        "key": "show",
+        "title": "Beispiel",
+        "url": "/adapters/example/show"
+    }],
+    "viewJsFiles": {
+        "show": ["/static/example/js/show.js"]
+    },
+    "viewCssFiles": {
+        "show": ["/static/example/css/show.css"]
+    }
+}

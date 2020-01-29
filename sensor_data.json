@@ -1,0 +1,9 @@
+// Taster Küche
+
+{ "config": { "group": "8252", "on": true, "reachable": false }, "ep": 1, "etag": "ad1bc71d199c5d6280aa244ca426f619", "manufacturername": "Insta", "mode": 1, "modelid": "WS_4f_J_1", "name": "Küche", "state": { "buttonevent": 1002, "lastupdated": "2019-05-25T19:52:31" }, "swversion": "10023202", "type": "Sensor", "uniqueid": "00:0f:17:12:41:02:05:b8-01-1000", "id": "5", "supports": { "arr": [], "text": "Nicht unterstützt" } }
+
+
+
+// Schreibtisch
+
+{ "config": { "battery": 100, "on": true, "reachable": true, "temperature": 3000 }, "ep": 1, "etag": "a61aee76e0e362fc765b9a5af107c9e1", "manufacturername": "LUMI", "mode": 1, "modelid": "lumi.remote.b286acn01", "name": "Schreibtisch", "state": { "buttonevent": 2002, "lastupdated": "2019-05-28T18:43:58" }, "swversion": "20180809", "type": "Sensor", "uniqueid": "00:15:8d:00:02:82:9c:60-01-0012", "id": "24", "supports": { "arr": [], "text": "Nicht unterstützt" } }
