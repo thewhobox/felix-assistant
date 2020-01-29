@@ -25,6 +25,7 @@
     "url": "https://github.com/thewhobox/felix-assistant"
   },
   "dependencies": {
+    "lodash": ">=4.17.12",
     "body-parser": "^1.18.3",
     "child_process": "^1.0.2",
     "cookie-parser": "^1.4.4",
