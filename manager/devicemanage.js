@@ -93,7 +93,7 @@ class devicemanager {
         if (obj.parent == undefined)
             obj.parent = obj.id.substr(0, obj.id.lastIndexOf("."));
             
-        item.adapter = this.adapter;
+        obj.adapter = this.adapter;
 
         this.db.get("channels").push(obj).write();
     }

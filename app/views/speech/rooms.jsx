@@ -51,7 +51,34 @@ class Index extends React.Component {
                         <div className="col s2"><label htmlFor='siteId'>siteId:</label></div>
                         <div className="col s10"><input name='siteId' type='text' autoComplete='off' required /></div>
                     </div>
+                    <div className="row selectId">
+                        <div className="col s2"><label htmlFor='device_id'>Temperatur Ist: </label></div>
+                        <div className="col s10">
+                        <div className="file-field input-field">
+                            <div id="select_id" className="btn">
+                                <span>Auswählen</span>
+                            </div>
+                            <div className="file-path-wrapper">
+                                <input name="device_id" className="validate" type="text" autoComplete='off' />
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row selectId">
+                        <div className="col s2"><label htmlFor='device_id'>Temperatur Soll: </label></div>
+                        <div className="col s10">
+                        <div className="file-field input-field">
+                            <div id="select_id" className="btn">
+                                <span>Auswählen</span>
+                            </div>
+                            <div className="file-path-wrapper">
+                                <input name="device_id2" className="validate" type="text" autoComplete='off' />
+                            </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                    
                 <div className="modal-footer">
                     <a className="modal-close btn-flat waves-effect waves-red">Abbrechen</a>
                     <input type="submit" className="btn-flat waves-effect waves-green" value="Hinzufügen" />
@@ -76,11 +103,24 @@ class Index extends React.Component {
                         <div className="col s2"><label htmlFor='device_id'>Temperatur: </label></div>
                         <div className="col s10">
                         <div className="file-field input-field">
+                            <div id="select_id2" className="btn">
+                                <span>Auswählen</span>
+                            </div>
+                            <div className="file-path-wrapper">
+                                <input name="device_id" className="validate" type="text" autoComplete='off' />
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row selectId">
+                        <div className="col s2"><label htmlFor='device_id'>Temperatur Soll: </label></div>
+                        <div className="col s10">
+                        <div className="file-field input-field">
                             <div id="select_id" className="btn">
                                 <span>Auswählen</span>
                             </div>
                             <div className="file-path-wrapper">
-                                <input id="device_id" name="device_id" className="validate" type="text" autoComplete='off' required />
+                                <input name="device_id2" className="validate" type="text" autoComplete='off' />
                             </div>
                             </div>
                         </div>
@@ -99,7 +139,7 @@ class Index extends React.Component {
 
 class Room extends React.Component {
     render() {
-        return <tr data-id={this.props.item.id}>
+        return <tr data-id={this.props.item.id} data-temp={this.props.item.temp} data-tempsoll={this.props.item.tempsoll}>
             <td>
                 <a href={"?delete=" + this.props.item.id} className="btn-flat red-text"><i className="material-icons">delete</i></a>
                 <a href={"?delete=" + this.props.item.id} className="btn-flat brown-text modal-trigger" data-target="dialog-edit"><i className="material-icons">edit</i></a>

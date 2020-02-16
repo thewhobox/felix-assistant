@@ -88,7 +88,33 @@ Snips.prototype.onIntentDetected = async function(message) {
     var map = {
         LichtSchalten: ["light", "switch"],
         LichtDimmen: ["light", "dim"],
-        LichtFarbe: ["light", "color"]
+        LichtFarbe: ["light", "color"],
+        RolloUpDown: ["rollo", "updown"],
+        RolloPosition: ["rollo", "position"],
+        TemperatureGet: ["temp", "get"],
+        TemperatureGetSoll: ["temp", "getSoll"],
+        TemperatureSet: ["temp", "set"],
+        TemperatureEncrease: ["temp", "encr"],
+        TemperatureDecrease: ["temp", "decr"]
+    }
+
+    if(intents[1] == "RolloUpDown"){
+        var flag = false;
+        for(var i = 0; i<message.slots.length; i++){
+            var xy = message.slots[i];
+            if(xy.rawValue == "prozent"){
+                flag = true;
+            }
+        }
+        if(flag) {
+            intents[1] = "RolloPosition";
+        }
+    }
+
+    if(intents[1] == "TemperatureGet"){
+        if(message.input.toLowerCase().indexOf(" soll ") > -1) {
+            intents[1] = "TemperatureGetSoll";
+        }
     }
 
     var hs = map[intents[1]];
@@ -102,7 +128,7 @@ Snips.prototype.onIntentDetected = async function(message) {
 
     for(var index in message.slots) {
         var item = message.slots[index];
-        params.entities[item.slotName] = item.rawValue;
+        params.entities[item.slotName] = typeof item.value.value === "string" ? item.value.value.toLowerCase() : item.value.value;
     }
 
     console.log("Parameter: " + JSON.stringify(params.entities));
@@ -117,12 +143,6 @@ Snips.prototype.onIntentDetected = async function(message) {
     } else {
         var handlerRes = await handlers[hs[0]][hs[1]](params);
                                 //.catch(err => { console.log("Handler Error ", err)});
-        if(handlerRes.stopCallback) {
-            if(stopCallback != null)
-                this.processResult(stopCallback);
-            
-            stopCallback = handlerRes.stopCallback;
-        }
 
         console.log("Antwort: " + handlerRes.answer);
 

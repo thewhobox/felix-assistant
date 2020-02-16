@@ -27,6 +27,7 @@ class Adapter {
         this.conn.on("message", (data, cb) => {
             switch(data.cmd) {
                 case "getForeignState":
+                    console.log(JSON.stringify(data));
                     cb(this.dmanager.getState(data.data));
                     break;
                 case "setForeignState":

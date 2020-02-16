@@ -39,7 +39,7 @@ class speechmanager {
     }
 
     updateRoom(body) {
-        db.get("rooms").find({id: parseInt(body.id)}).assign({ name: body.name, key: body.name.toLowerCase(), siteId: body.siteId }).write();
+        db.get("rooms").find({id: parseInt(body.id)}).assign({ name: body.name, key: body.name.toLowerCase(), siteId: body.siteId, temp: body.device_id, tempsoll: body.device_id2 }).write();
     }
 
     removeRoom(id) {
@@ -49,6 +49,10 @@ class speechmanager {
 
     getRoomByKey(key) {
         return this.normalize(db.get("rooms").find({key}).value());
+    }
+
+    getRoomBySiteId(siteId) {
+        return this.normalize(db.get("rooms").find({siteId}).value());
     }
 
 

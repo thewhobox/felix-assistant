@@ -3,7 +3,7 @@
 const io = require('socket.io-client');
 
 const smanager = require("./../../manager/speechmanage")(true);
-const rndanswers = ["Schon erledigt", "Kein Problem", "Aber natürlich", "Selbstverständlich", "Okay", "Erledigt", "Ok", "Schon passiert", "Nein... Nur Spaß. Schon erledigt"];
+const rndanswers = ["Zu Befehl!", "Ei Ei. Captain!", "Schon erledigt", "Kein Problem", "Aber natürlich", "Selbstverständlich", "Okay", "Erledigt", "Ok", "Schon passiert", "Nein... Nur Spaß. Schon erledigt"];
 const colorToHue = {
     pink: { hue: 350, sat: 25 },
     violett: { hue: 300, sat: 45 },
@@ -124,7 +124,6 @@ Action.prototype.getDevices = function (skill, func, funcName) {
             if (device.functions && device.functions[func])
                 devices.push(device);
         });
-
     } else if (skill.entities.DeviceLocation != undefined && skill.entities.DeviceName != undefined) {
         var x = smanager.getDevices({ smart: skill.entities.DeviceName, room: skill.entities.DeviceLocation });
         x.forEach((device) => {

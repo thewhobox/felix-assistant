@@ -101,7 +101,7 @@ $("div[data-type=state-viewer]").dblclick((ele) => {
 
 $("div[data-type=state-command] button").click((e) => { handledChange = false; checkChangedState(e) });
 $("div[data-type=state-editor] [data-type=input]").change((e) => { handledChange = false; checkChangedState(e) });
-$("div[data-type=state-editor] [data-type=input]").focusout((e) => { handledChange = false; checkChangedState(e) });
+//$("div[data-type=state-editor] [data-type=input]").focusout((e) => { handledChange = false; checkChangedState(e) });
 
 function checkChangedState(ele) {
     if(handledChange) return;
@@ -110,6 +110,7 @@ function checkChangedState(ele) {
 
     var val = "";
     var td = ele.parent().parent();
+
     if(td[0].localName == "div") {
         td = td.parent();
     }
@@ -117,6 +118,9 @@ function checkChangedState(ele) {
     td.removeClass("active");
 
     switch(td.data("type")) {
+        case "direction":
+            val = $(ele).data("value");
+            break;
         case "button":
             val = true;
             break;

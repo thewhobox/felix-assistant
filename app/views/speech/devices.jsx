@@ -90,6 +90,7 @@ class Index extends React.Component {
                             <div className="col s10">
                                 <select name='type' className="validate" data-role='select'>
                                     <option value="light">Licht</option>
+                                    <option value="rollo">Rolladen</option>
                                     <option value="other">Sonstiges</option>
                                 </select>
                             </div>
@@ -152,7 +153,11 @@ class Device extends React.Component {
         switch(this.props.item.type) {
             case "light":
                 icon = "emoji_objects";
-                color = "yellow";
+                color = "orange";
+                break;
+            case "rollo":
+                icon = "line_weight";
+                color = "brown";
                 break;
         }
         return <a className="collection-item avatar" href={"/speech/device/" + this.props.item._id}>

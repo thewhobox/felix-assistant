@@ -13,6 +13,16 @@ const functions = {
         match: "hue",
         type: "number",
         role: "light.hue"
+    },
+    updown: {
+        match: "direction",
+        type: "direction",
+        role: "rollo.direction"
+    },
+    position: {
+        match: "position",
+        type: "number",
+        role: "state.position"
     }
 }
 

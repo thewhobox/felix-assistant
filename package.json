@@ -48,7 +48,7 @@
   },
   "devDependencies": {
     "a.felix.broadlink": "*",
-    "a.felix.deconz": "*",
+    "a.felix.deconz": "^1.0.3",
     "a.felix.denon": "*",
     "a.felix.emby": "*",
     "a.felix.javascript": "*",

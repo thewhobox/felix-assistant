@@ -106,6 +106,8 @@ class Device extends React.Component {
                             <div className="col s10">
                                 <select name='function'>
                                     <option value='onoff'>An/Aus</option>
+                                    <option value='updown'>Auf/Aub</option>
+                                    <option value='position'>Position</option>
                                     <option value='dim'>Dimmen</option>
                                     <option value='color'>Farbe</option>
                                 </select>
@@ -163,6 +165,7 @@ class Device extends React.Component {
                             <div className="col s10">
                                 <select name='type' className="validate" data-role='select' defaultValue={this.device.type}>
                                     <option value="light">Licht</option>
+                                    <option value="rollo">Rollladen</option>
                                     <option value="other">Sonstiges</option>
                                 </select>
                             </div>

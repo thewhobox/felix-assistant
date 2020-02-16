@@ -141,6 +141,10 @@ class TreeItem extends React.Component {
 					y = <div data-type="state-viewer"><span className={classes2} data-type="value">{val}</span><span data-type="unit">{this.props.item.unit}</span></div>;
 					break;
 
+				case "direction":
+					y = <div data-type="state-command"><button data-value="0" className="btn grey">Auf</button><button data-value="1" className="btn grey">Ab</button></div>
+					break;
+
 				case "boolean":
 					val = val ? "true" : "false";
 					y = <div data-type="state-viewer"><span className={classes2} data-type="value">{val}</span><span data-type="unit">{this.props.item.unit}</span></div>;
@@ -166,6 +170,9 @@ class TreeItem extends React.Component {
 
 				case "number":
 					z = <div data-type="state-editor"><input data-type="input" type="number" defaultValue={this.props.item.value} /></div>
+					break;
+
+				case "direction":
 					break;
 
 				case "text":
