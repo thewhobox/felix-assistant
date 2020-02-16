@@ -48,11 +48,11 @@
   },
   "devDependencies": {
     "a.felix.broadlink": "*",
-    "a.felix.deconz": "^1.0.3",
+    "a.felix.deconz": "*",
     "a.felix.denon": "*",
     "a.felix.emby": "*",
     "a.felix.javascript": "*",
-    "a.felix.knx": "0.0.1-e",
+    "a.felix.knx": "*",
     "a.felix.lgtv": "*",
     "a.felix.telegram": "*"
   },
